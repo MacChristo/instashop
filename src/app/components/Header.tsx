@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { IoIosArrowRoundBack, IoIosCheckmark } from "react-icons/io";
 import { FiMoreVertical } from "react-icons/fi";
 const Header = ({ name }: { name: string }) => {
