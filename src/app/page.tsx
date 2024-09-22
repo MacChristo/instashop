@@ -1,9 +1,9 @@
 "use client";
-import { useRouter } from "next/navigation";
+import Button from "./components/Button";
 import Image from "next/image";
 import saleIllustrator from "../public/images/sale-illustration.svg";
-
 import { CiCircleCheck } from "react-icons/ci";
+
 const Welcome = () => {
   const welcomeList = [
     {
@@ -60,28 +60,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
-
-const Button = ({
-  text,
-  nextPage,
-  classNames,
-}: {
-  text: string;
-  nextPage: string;
-  classNames: string;
-}) => {
-  const router = useRouter();
-  return (
-    <button
-      type="submit"
-      className={`${classNames}`}
-      onClick={() => {
-        router.push(nextPage);
-      }}
-    >
-      {text}
-    </button>
-  );
-};
-
-export { Button };
