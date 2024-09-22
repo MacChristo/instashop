@@ -103,7 +103,7 @@ const ProfileSetup: React.FC<ProfileSetupProps> = ({ setVisibleRegister }) => {
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [profileEmail, setProfileEmail] = useState("");
 
   return (
     <div className="flex flex-col items-start gap-3 w-[100%]">
@@ -197,9 +197,9 @@ const ProfileSetup: React.FC<ProfileSetupProps> = ({ setVisibleRegister }) => {
               placeholder="Email"
               className="w-[100%] rounded-[10px] px-4 py-3 border border-[#000] border-solid focus-within:outline-none"
               onChange={(e) => {
-                setEmail(e.target.value);
+                setProfileEmail(e.target.value);
               }}
-              value={email}
+              value={profileEmail}
             />
           </form>
         </div>
