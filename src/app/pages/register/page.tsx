@@ -9,7 +9,6 @@ import google from "../../../public/images/google-icon.svg";
 import addLogo from "../../../public/images/add-logo.svg";
 
 const Register: React.FC = () => {
-  // console.log(email);
   const [visibleRegister, setVisibleRegister] =
     useState<string>("RegisterDetails");
   return (
@@ -75,7 +74,7 @@ const RegisterDetails: React.FC<RegisterDetailsProps> = ({
         <input
           type="email"
           name="email"
-          id="email"
+          id="reg-email"
           placeholder="Enter phone number or email"
           value={email}
           className="w-[100%] rounded-[10px] px-4 py-3 border border-[#000] border-solid focus-within:outline-none"
