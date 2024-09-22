@@ -43,7 +43,7 @@ interface RegisterDetailsProps {
 const RegisterDetails: React.FC<RegisterDetailsProps> = ({
   setVisibleRegister,
 }) => {
-  let [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const router = useRouter();
   return (
     <div className="flex flex-col gap-3">
