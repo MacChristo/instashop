@@ -24,7 +24,7 @@ const Product = () => {
   );
 };
 
-export const Header = ({ name }: { name: string }) => {
+const Header = ({ name }: { name: string }) => {
   const router = useRouter();
   return (
     <div className="flex flex-col justify-between items-center p-4 gap-[15px]">
@@ -53,8 +53,9 @@ export const Header = ({ name }: { name: string }) => {
     </div>
   );
 };
+export { Header };
 
-export const SectionHeaders = ({ name }: { name: string }) => {
+const SectionHeaders = ({ name }: { name: string }) => {
   return (
     <div className="flex flex-row w-[100%] justify-between    items-center">
       <h2 className="text-[#1a1a1a]">{name}</h2>
@@ -62,8 +63,9 @@ export const SectionHeaders = ({ name }: { name: string }) => {
     </div>
   );
 };
+export { SectionHeaders };
 
-export const ProductButtons = () => {
+const ProductButtons = () => {
   const router = useRouter();
   return (
     <div className="flex flex-row w-[100%] justify-between items-center gap-3 mt-6 px-4">
@@ -88,8 +90,9 @@ export const ProductButtons = () => {
     </div>
   );
 };
+export { ProductButtons };
 
-export const BasicDetails = () => {
+const BasicDetails = () => {
   const [productTitle, setProductTitle] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -171,6 +174,7 @@ export const BasicDetails = () => {
     </div>
   );
 };
+export { BasicDetails };
 
 const ProductImage = () => {
   return (
