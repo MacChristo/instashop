@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import Header from "@/app/components/Header";
+import BasicDetails from "@/app/components/BasicDetails";
+import SectionHeaders from "@/app/components/SectionHeaders";
 import { useRouter } from "next/navigation";
-import { IoIosArrowRoundBack, IoIosCheckmark } from "react-icons/io";
-import { FiMoreVertical } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
 import { BiImageAdd } from "react-icons/bi";
 
 const Product = () => {
@@ -23,47 +23,6 @@ const Product = () => {
     </main>
   );
 };
-
-const Header = ({ name }: { name: string }) => {
-  const router = useRouter();
-  return (
-    <div className="flex flex-col justify-between items-center p-4 gap-[15px]">
-      <div className="flex flex-row justify-between w-[100%] items-center">
-        <div className="flex flex-row gap-0 items-center">
-          <IoIosArrowRoundBack
-            onClick={() => {
-              router.push("/pages/createProduct");
-            }}
-            size={35}
-            className="text-[#1a1a1a]"
-          />
-          <p className="text-[#1a1a1a] font-semibold">{name}</p>
-        </div>
-        <FiMoreVertical size={30} className="text-[#1a1a1a]" />
-      </div>
-      <div className="flex flex-row justify-between items-center w-[100%]">
-        <div className="flex flex-row items-center gap-1 py-[0.35em] px-2 rounded-full border-[1.5px] border-solid border-[#1a1a1a}">
-          <p className="text-[#1a1a1a] text-sm">Draft</p>
-          <IoIosCheckmark size={20} className="text-[#1a1a1a]" />
-        </div>
-        <p className="text-[#8a226f] text-[0.95rem] font-semibold">
-          Preview product
-        </p>
-      </div>
-    </div>
-  );
-};
-export { Header };
-
-const SectionHeaders = ({ name }: { name: string }) => {
-  return (
-    <div className="flex flex-row w-[100%] justify-between    items-center">
-      <h2 className="text-[#1a1a1a]">{name}</h2>
-      <IoIosArrowDown size={20} className="text-[#1a1a1a]" />
-    </div>
-  );
-};
-export { SectionHeaders };
 
 const ProductButtons = () => {
   const router = useRouter();
@@ -90,91 +49,6 @@ const ProductButtons = () => {
     </div>
   );
 };
-export { ProductButtons };
-
-const BasicDetails = () => {
-  const [productTitle, setProductTitle] = useState("");
-  const [productDescription, setProductDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [oldPrice, setOldPrice] = useState("");
-  const [collection, setCollection] = useState("");
-  const [inventory, setInventory] = useState("");
-
-  return (
-    <div className="flex flex-col w-[100%] p-4 gap-[15px]">
-      <SectionHeaders name="Basic details" />
-      <form action="" className="flex flex-col w-[100%] gap-3">
-        <input
-          onChange={(t) => {
-            setProductTitle(t.target.value);
-          }}
-          value={productTitle}
-          type="text"
-          name="product-title"
-          id="product-title"
-          placeholder="Product title"
-          className="w-[100%] rounded-[10px] text-[#1a1a1a] px-4 py-3 border border-[#000] border-solid focus-within:outline-none"
-        />
-        <textarea
-          onChange={(d) => {
-            setProductDescription(d.target.value);
-          }}
-          value={productDescription}
-          name="product-description"
-          id="product-description"
-          placeholder="Product description"
-          className="w-[100%] rounded-[10px] text-[#1a1a1a] px-4 py-3 border border-[#000] border-solid focus-within:outline-none"
-        ></textarea>
-        <div className="flex flex-row w-[100%] gap-3 justify-between">
-          <input
-            onChange={(p) => {
-              setPrice(p.target.value);
-            }}
-            value={price}
-            type="text"
-            name="price"
-            id="price"
-            placeholder="Price"
-            className="w-1/2 rounded-[10px] px-4 text-[#1a1a1a] py-3 border border-[#000] border-solid focus-within:outline-none"
-          />
-          <input
-            onChange={(o) => {
-              setOldPrice(o.target.value);
-            }}
-            value={oldPrice}
-            type="text"
-            name="old-price"
-            id="old-price"
-            placeholder="Old price"
-            className="w-1/2 rounded-[10px] px-4 text-[#1a1a1a] py-3 border border-[#000] border-solid focus-within:outline-none"
-          />
-        </div>
-        <textarea
-          onChange={(c) => {
-            setCollection(c.target.value);
-          }}
-          value={collection}
-          name="product-collection"
-          id="product-collection"
-          placeholder="Product collection"
-          className="w-[100%] rounded-[10px] px-4 text-[#1a1a1a] py-3 border border-[#000] border-solid focus-within:outline-none"
-        ></textarea>
-        <input
-          onChange={(i) => {
-            setInventory(i.target.value);
-          }}
-          value={inventory}
-          type="text"
-          name="inventory-stocks"
-          id="inventory-stocks"
-          placeholder="Inventory stocks"
-          className="w-[100%] rounded-[10px] px-4 text-[#1a1a1a] py-3 border border-[#000] border-solid focus-within:outline-none"
-        />
-      </form>
-    </div>
-  );
-};
-export { BasicDetails };
 
 const ProductImage = () => {
   return (

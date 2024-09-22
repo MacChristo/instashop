@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "../createProduct/page";
-import { BasicDetails } from "../createProduct/page";
+import Header from "@/app/components/Header";
+import BasicDetails from "@/app/components/BasicDetails";
 
 const page = () => {
   return (
